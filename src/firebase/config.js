@@ -6,22 +6,22 @@
 // 4. Create Firestore database
 // 5. Enable Firebase Storage
 // 6. Get your config from Project Settings > General > Your apps
-// 7. Replace the config below with your actual Firebase config
+// 7. Copy .env.example to .env and replace with your actual Firebase config values
 
 import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
-// TODO: Replace this with your actual Firebase config
+// Firebase configuration using environment variables
 const firebaseConfig = {
-  apiKey: "AIzaSyAS0ne9L84B6maNTLTwYnWw-plwq55mdS0",
-  authDomain: "echoboard-fe125.firebaseapp.com",
-  projectId: "echoboard-fe125",
-  storageBucket: "echoboard-fe125.firebasestorage.app",
-  messagingSenderId: "469052930823",
-  appId: "1:469052930823:web:51da5dda66830aba75a3a2",
-  measurementId: "G-09KCYYGY6Q"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
 
 // Initialize Firebase

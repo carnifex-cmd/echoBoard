@@ -53,18 +53,20 @@ A personal audio message board where you can record, organize, and share your vo
    - Enable Storage
    - Get your Firebase configuration from Project Settings
 
-4. **Configure Firebase**
-   - Open `src/firebase/config.js`
-   - Replace the placeholder configuration with your actual Firebase config:
-   ```javascript
-   const firebaseConfig = {
-     apiKey: "your-api-key",
-     authDomain: "your-project.firebaseapp.com",
-     projectId: "your-project-id",
-     storageBucket: "your-project.appspot.com",
-     messagingSenderId: "123456789",
-     appId: "your-app-id"
-   };
+4. **Configure Firebase Environment Variables**
+   - Copy `.env.example` to `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+   - Open `.env` and replace the placeholder values with your actual Firebase config:
+   ```bash
+   REACT_APP_FIREBASE_API_KEY=your-api-key
+   REACT_APP_FIREBASE_AUTH_DOMAIN=your-project.firebaseapp.com
+   REACT_APP_FIREBASE_PROJECT_ID=your-project-id
+   REACT_APP_FIREBASE_STORAGE_BUCKET=your-project.appspot.com
+   REACT_APP_FIREBASE_MESSAGING_SENDER_ID=123456789
+   REACT_APP_FIREBASE_APP_ID=your-app-id
+   REACT_APP_FIREBASE_MEASUREMENT_ID=your-measurement-id
    ```
 
 5. **Start the development server**
