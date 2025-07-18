@@ -27,6 +27,7 @@ A personal audio message board where you can record, organize, and share your vo
 
 - Node.js (v14 or higher)
 - npm or yarn
+- Docker and Docker Compose (for Docker setup)
 - A Firebase project with the following services enabled:
   - Authentication (Google provider)
   - Firestore Database
@@ -78,6 +79,46 @@ A personal audio message board where you can record, organize, and share your vo
    - Navigate to `http://localhost:3000`
    - Sign in with your Google account
    - Start creating boards and recording notes!
+
+## Docker Setup
+
+### Option 1: Development with Docker
+
+1. **Set up environment variables**
+   ```bash
+   cp env.template .env
+   # Edit .env with your Firebase configuration
+   ```
+
+2. **Run development server**
+   ```bash
+   docker-compose --profile dev up --build
+   ```
+   - Application will be available at `http://localhost:3000`
+   - Hot reload is enabled for development
+
+### Option 2: Production with Docker
+
+1. **Set up environment variables**
+   ```bash
+   cp env.template .env
+   # Edit .env with your Firebase configuration
+   ```
+
+2. **Build and run production container**
+   ```bash
+   docker-compose --profile prod up --build
+   ```
+   - Application will be available at `http://localhost:80`
+   - Optimized build with nginx serving static files
+
+### Docker Commands
+
+- **Development**: `docker-compose --profile dev up`
+- **Production**: `docker-compose --profile prod up`
+- **Stop containers**: `docker-compose down`
+- **Rebuild**: `docker-compose up --build`
+- **View logs**: `docker-compose logs -f`
 
 ## Project Structure
 

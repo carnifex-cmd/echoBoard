@@ -1,0 +1,12 @@
+version: '3.8'
+
+# Override file for local development
+# This file is automatically merged with docker-compose.yml
+services:
+  echoboard-dev:
+    # Use .env file for environment variables in development
+    env_file:
+      - .env
+    # Enable hot reloading
+    stdin_open: true
+    tty: true 
